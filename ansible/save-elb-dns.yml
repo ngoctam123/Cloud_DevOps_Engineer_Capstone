@@ -17,3 +17,4 @@
       copy:
         content: "{{ elb_dns.stdout }}"
         dest: "~/elb_dns.txt"
+      delegate_to: management[0]

@@ -132,7 +132,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - "b4:20:99:9f:18:3b:da:86:3b:72:a3:f2:52:37:af:e6"
+            - "c4:a8:a9:36:22:17:50:5c:4e:11:58:e3:b8:5d:bf:4e"
       - attach_workspace:
           at: ~/
       - run:
@@ -159,7 +159,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - "b4:20:99:9f:18:3b:da:86:3b:72:a3:f2:52:37:af:e6"
+            - "c4:a8:a9:36:22:17:50:5c:4e:11:58:e3:b8:5d:bf:4e"
       - attach_workspace:
           at: ~/
       - run:
@@ -209,7 +209,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - "b4:20:99:9f:18:3b:da:86:3b:72:a3:f2:52:37:af:e6"
+            - "c4:a8:a9:36:22:17:50:5c:4e:11:58:e3:b8:5d:bf:4e"
       - attach_workspace:
           at: ~/
       - run:
@@ -228,16 +228,16 @@ workflows:
   default:
     jobs:
       - test-build
-      - upload-docker:
-          requires:
-            - test-build
-          filters:
-            branches:
-              only: [ main ]
+      # - upload-docker:
+      #     requires:
+      #       - test-build
+      #     filters:
+      #       branches:
+      #         only: [ main ]
       # - deploy-infrastructure:
       #     filters:
       #       branches:
-      #         only: [ master ]
+      #         only: [ main ]
       # - configure-infrastructure:
       #     requires:
       #       - deploy-infrastructure

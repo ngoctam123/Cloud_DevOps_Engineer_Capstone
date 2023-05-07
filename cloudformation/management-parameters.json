@@ -1,5 +1,5 @@
 [
-  "EnvironmentName=TamVN-capstone-project",
+  "EnvironmentName=tamvn-capstone-project",
   "SSHKeyName=udacity",
   "amiImageId=ami-0aa2b7722dc1b5612"
 ]

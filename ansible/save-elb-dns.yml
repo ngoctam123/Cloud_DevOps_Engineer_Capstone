@@ -1,6 +1,6 @@
 ---
 - name: "Save LoadBalancer's DNS name locally"
-  hosts: localhost
+  hosts: management[0]
   user: ubuntu
   gather_facts: false
   become: yes
@@ -17,4 +17,4 @@
       copy:
         content: "{{ elb_dns.stdout }}"
         dest: "~/elb_dns.txt"
-      delegate_to: management[0]
+      delegate_to: localhost

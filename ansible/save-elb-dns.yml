@@ -13,7 +13,6 @@
       args:
         chdir: $HOME
 
-    - set_fact:
       ansible_python_interpreter: '{{ ansible_playbook_python }}'
     - name: Copy the output to a local file
       copy:

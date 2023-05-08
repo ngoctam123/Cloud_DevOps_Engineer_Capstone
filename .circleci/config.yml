@@ -20,7 +20,6 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
-            ansible_python_interpreter: /usr/bin/python3
             make install
 
       # run lint

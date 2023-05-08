@@ -6,7 +6,10 @@
   become: yes
   vars:
     ENVIRONMENT_NAME: "{{ lookup('env', 'ENVIRONMENT_NAME') }}"
+    ansible_python_interpreter: "{{ '/usr/bin/env python-docker' }}"
   tasks:
+    - set_fact:
+      ansible_python_interpreter: '{{ ansible_playbook_python }}'
     - name: Get the LoadBalancer's DNS name
       shell: "./bin/kubectl get svc {{ ENVIRONMENT_NAME }}-service"
       register: elb_dns

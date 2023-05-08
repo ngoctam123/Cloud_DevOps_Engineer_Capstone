@@ -6,7 +6,6 @@
   become: yes
   vars:
     ENVIRONMENT_NAME: "{{ lookup('env', 'ENVIRONMENT_NAME') }}"
-    ansible_python_interpreter: "{{ '/usr/bin/env python-docker' }}"
   tasks:
     - name: Get the LoadBalancer's DNS name
       shell: "./bin/kubectl get svc {{ ENVIRONMENT_NAME }}-service"
@@ -14,8 +13,11 @@
       args:
         chdir: $HOME
 
+    - set_fact:
+      ansible_python_interpreter: '{{ ansible_playbook_python }}'
     - name: Copy the output to a local file
       copy:
         content: "{{ elb_dns.stdout }}"
         dest: "~/elb_dns.txt"
       delegate_to: localhost
+      delegate_facts: true

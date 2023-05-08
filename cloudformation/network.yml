@@ -69,7 +69,7 @@ Resources:
     DependsOn: VPCGatewayAttachment
     Type: AWS::EC2::Route
     Properties:
-      RouteTableId: !Ref PublicRouteTable
+      RouteTableId: !Ref PublicRouteTableNatGateway2
       DestinationCidrBlock: 0.0.0.0/0
       GatewayId: !Ref InternetGateway
 

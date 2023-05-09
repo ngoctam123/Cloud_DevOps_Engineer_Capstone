@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: capstone-project-app
-          image: TamVN/capstone-project
+          image: tamvn/capstone-project
           ports:
             - containerPort: 80

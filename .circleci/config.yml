@@ -140,11 +140,12 @@ jobs:
             if grep -q "No changes to deploy" ~/checkIfDeployed.txt
               then
                 cat ~/inventory.txt
-                echo "Our management instances are already configured."
-              else
-                cat ~/inventory.txt
                 cd ansible
                 ansible-playbook -i ~/inventory.txt configure-server.yml
+                
+              else
+                cat ~/inventory.txt
+                echo "Our management instances are already configured."
               fi
 
   configure-cluster:

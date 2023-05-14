@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: tamvn-capstone-app
-          image: tamvn/tamvn-capstone
+          image: ngoctamzt/tamvn-capstone
           ports:
             - containerPort: 80

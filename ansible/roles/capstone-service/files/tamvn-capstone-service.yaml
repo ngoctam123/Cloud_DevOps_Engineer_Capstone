@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: capstone-project-service
+  name: tamvn-capstone-service
 spec:
   type: LoadBalancer
   selector:
-    app: capstone-project-app
+    app: tamvn-capstone-app
   ports:
     - protocol: TCP
       port: 80

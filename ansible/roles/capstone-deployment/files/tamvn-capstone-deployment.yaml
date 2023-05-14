@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: capstone-project-deployment
+  name: tamvn-capstone-deployment
   labels:
-    app: capstone-project-app
+    app: tamvn-capstone-app
 spec:
   replicas: 4
   selector:
     matchLabels:
-      app: capstone-project-app
+      app: tamvn-capstone-app
   template:
     metadata:
       labels:
-        app: capstone-project-app
+        app: tamvn-capstone-app
     spec:
       containers:
-        - name: capstone-project-app
-          image: tamvn/capstone-project
+        - name: tamvn-capstone-app
+          image: tamvn/tamvn-capstone
           ports:
             - containerPort: 80
